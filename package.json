@@ -4,7 +4,10 @@
   "description": "Angular2 seed project",
   "main": "app/bootstrap.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "npm run server:dev",
+    "server:dev": "webpack-dev-server --hot --inline --progress --profile --colors --watch --display-error-details --display-cached  --content-base src/",
+    "server:prod": "http-server dist --cors",
+    "build:prod": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached"
   },
   "repository": {
     "type": "git",
@@ -18,5 +21,33 @@
   "bugs": {
     "url": "https://github.com/WiktorKa/ng2-seed/issues"
   },
-  "homepage": "https://github.com/WiktorKa/ng2-seed#readme"
+  "homepage": "https://github.com/WiktorKa/ng2-seed#readme",
+  "devDependencies": {
+    "compression-webpack-plugin": "^0.3.0",
+    "copy-webpack-plugin": "^1.1.1",
+    "es6-promise-loader": "^1.0.1",
+    "html-webpack-plugin": "^2.9.0",
+    "raw-loader": "^0.5.1",
+    "source-map-loader": "^0.1.5",
+    "ts-helper": "0.0.1",
+    "ts-loader": "^0.8.1",
+    "tslint": "^3.4.0",
+    "tslint-loader": "^2.1.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-md5-hash": "0.0.5"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-beta.7",
+    "es6-promise": "^3.1.2",
+    "es6-shim": "^0.33.13",
+    "es7-reflect-metadata": "^1.5.5",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.2",
+    "zone.js": "^0.5.15"
+  },
+  "engines": {
+    "node": ">= 4.2.1 <= 5",
+    "npm": ">= 3"
+  }
 }
