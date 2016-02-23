@@ -1,0 +1,22 @@
+{
+  "name": "ng2-seed",
+  "version": "1.0.0",
+  "description": "Angular2 seed project",
+  "main": "app/bootstrap.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WiktorKa/ng2-seed.git"
+  },
+  "keywords": [
+    "angular2"
+  ],
+  "author": "Wiktor Kowalczyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WiktorKa/ng2-seed/issues"
+  },
+  "homepage": "https://github.com/WiktorKa/ng2-seed#readme"
+}
