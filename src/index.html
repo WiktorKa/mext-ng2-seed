@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-    <title><%= webpackConfig.metadata.title %></title>
+    <title></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<%= webpackConfig.metadata.title %>">
+    <meta name="description" content="">
     <!-- base url -->
-    <base href="<%= webpackConfig.metadata.baseUrl %>">
+    <base href="/">
 </head>
 <body>
-<app>
+<my-app>
     Loading...
-</app>
-<% if (webpackConfig.metadata.ENV === 'development') { %>
-<!-- Webpack Dev Server reload -->
-<script src="http://<%= webpackConfig.metadata.host %>:<%= webpackConfig.metadata.port %>/webpack-dev-server.js"></script>
-<% } %>
+</my-app>
+<script src="http://localhost:8080/webpack-dev-server.js"></script>
 </body>
 </html>

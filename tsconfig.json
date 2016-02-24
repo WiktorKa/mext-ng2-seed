@@ -8,8 +8,8 @@
   },
   "exclude": [
     "node_modules",
-    "typings/main.d.ts",
-    "typings/main"
+    "typings/main",
+    "typings/main.d.ts"
   ],
   "filesGlob": [
     "./src/**/*.ts",
@@ -20,5 +20,7 @@
   ],
   "compileOnSave": false,
   "buildOnSave": false,
-  "atom": { "rewriteTsconfig": false }
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }
