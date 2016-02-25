@@ -32,6 +32,7 @@ if ('production' === process.env.ENV) {
   // In development we are including every operator
   require('rxjs/add/operator/map');
   require('rxjs/add/operator/mergeMap');
+  require('rxjs/add/operator/toPromise');
 
 }
 

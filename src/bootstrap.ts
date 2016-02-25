@@ -11,6 +11,7 @@ if ('production' === process.env.ENV) {
 }
 
 import {App} from './app/app';
+import {WikipediaService} from "./services/wikipedia.service";
 
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
