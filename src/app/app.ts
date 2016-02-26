@@ -18,11 +18,9 @@ import {JSONP_PROVIDERS} from 'angular2/http';
 export class App {
     items: Array<string> = [];
 
-    constructor(private wikipediaService: WikipediaService) {
-
-    }
+    constructor(private wikipediaService: WikipediaService) {}
 
     search(term: string) {
-        this.wikipediaService.search(term).then(items => this.items = items);
+        return this.wikipediaService.search(term).then(items => this.items = items);
     }
 }
