@@ -12,23 +12,21 @@ import {WikipediaService} from '../services/wikipedia.service';
 
 var mockWikipediaService = {
     search: (term: string) => {
-        return new Promise( (resolve) => {
-            setTimeout(() => resolve([term, 'Test1','Test2']) , 500);
-        } );
+        return new Promise<string[]>(resolve => resolve([term, 'Test1', 'Test2']));
     }
 };
 
 describe('App component', () => {
     beforeEachProviders(() => [
-        App,
-        provide(WikipediaService, {useValue: mockWikipediaService})
+        provide(WikipediaService, {useValue: mockWikipediaService}),
+        App
     ]);
     it('should have empty item list at the beginning', inject( [App], (app) => {
         expect(app.items.length).toEqual(0);
     }));
     it('should have non-empty list after search a term', inject( [App], (app) => {
         app.search('test').then((response) => {
-            expect(app.items.length).toEqual(response.length);
+            expect(app.items.length).toEqual(3);
         });
     }));
 });

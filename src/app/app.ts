@@ -16,7 +16,7 @@ import {JSONP_PROVIDERS} from 'angular2/http';
     providers: [WikipediaService, JSONP_PROVIDERS]
 })
 export class App {
-    items: Array<string> = [];
+    items: Array<string> = new Array<string>();
 
     constructor(private wikipediaService: WikipediaService) {}
 

@@ -10,9 +10,12 @@
     <base href="/">
 </head>
 <body>
-<my-app>
-    Loading...
-</my-app>
-<script src="http://localhost:8080/webpack-dev-server.js"></script>
+    <my-app>
+        Loading...
+    </my-app>
+    <% if (webpackConfig.metadata.ENV === 'development') { %>
+    <!-- Webpack Dev Server reload -->
+    <script src="http://<%= webpackConfig.metadata.host %>:<%= webpackConfig.metadata.port %>/webpack-dev-server.js"></script>
+    <% } %>
 </body>
 </html>
