@@ -1,5 +1,4 @@
 // @AngularClass
-
 var webpack = require('webpack');
 var helpers = require('./helpers');
 
@@ -7,7 +6,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var ENV = process.env.ENV = process.env.NODE_ENV = 'development';
-var HMR = process.argv.join('').indexOf('hot') > -1;
+var HMR = helpers.hasProcessFlag('hot');
 
 //
 var metadata = {
@@ -19,21 +18,17 @@ var metadata = {
     HMR: HMR
 };
 
-module.exports = helpers.validate({
+module.exports = helpers.defaults({
     // static data for index.html
     metadata: metadata,
     // for faster builds use 'eval'
-    devtool: 'source-map',
-    debug: true,
+    // devtool: 'eval' // for faster builds use 'eval'
     entry: {
         'polyfills': './src/polyfills.ts',
         'bootstrap': './src/bootstrap.ts'
     },
     output: {
         path: helpers.root('dist'),
-        filename: '[name].bundle.js',
-        sourceMapFilename: '[name].map',
-        chunkFilename: '[id].chunk.js'
     },
     resolve: {
         extensions: ['', '.ts', '.async.ts', '.js']
@@ -75,20 +70,9 @@ module.exports = helpers.validate({
             }
         })
     ],
-    // Other module loader config
-    tslint: {
-        emitErrors: false,
-        failOnHint: false,
-        resourcePath: 'src',
-    },
     // our Webpack Development Server config
     devServer: {
         port: metadata.port,
-        host: metadata.host,
-        // contentBase: 'src/',
-        historyApiFallback: true,
-        watchOptions: { aggregateTimeout: 300, poll: 1000 }
-    },
-    // we need this due to problems with es6-shim
-    node: {global: 'window', progress: false, crypto: 'empty', module: false, clearImmediate: false, setImmediate: false}
+        host: metadata.host
+    }
 });

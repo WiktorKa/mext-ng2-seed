@@ -110,7 +110,7 @@ Create new file ``tsconfig.json`` and copy/paste following:
     "./src/**/*.ts",
     "./test/**/*.ts",
     "!./node_modules/**/*.ts",
-    "src/custom_typings.d.ts",
+    "src/custom-typings.d.ts",
     "typings/browser.d.ts"
   ],
   "compileOnSave": false,
@@ -260,7 +260,7 @@ if ('production' === process.env.ENV) {
 }
 
 // For vendors for example jQuery, Lodash, angular2-jwt just import them anywhere in your app
-// Also see custom_typings.d.ts as you also need to do `typings install x` where `x` is your module
+// Also see custom-typings.d.ts as you also need to do `typings install x` where `x` is your module
 ```
 
 Now, let's try to give it a run. 
